@@ -1,0 +1,31 @@
+import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
+
+function Toggle(props) {
+
+  const [isToggleOn, setIsToggleOn] = useState(false); 
+
+  function handleClick() {
+    if (isToggleOn) 
+    {
+      setIsToggleOn(false);
+    } else {
+      setIsToggleOn(true);
+    }
+  }
+
+     return (
+      <div> 
+        <h1>Je suis un {props.name}</h1>
+        <button onClick={handleClick}>
+        {isToggleOn? "ON" : "OFF"}
+        </button>
+      </div>
+    );
+
+}
+
+ReactDOM.render(
+  <Toggle name="Bouton Toggle"/>,
+  document.getElementById('root')
+);
